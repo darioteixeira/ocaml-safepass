@@ -1,0 +1,23 @@
+OASISFormat: 0.3
+Name:        OCaml-safepass
+Version:     0.9
+Synopsis:    OCaml bindings to Openwall's Bcrypt.
+Authors:     Dario Teixeira
+License:     LGPL-2.0 with OCaml linking exception
+BuildTools:  ocamlbuild, ocamldoc
+Plugins:     META (0.3), DevFiles (0.3)
+
+Library "ocaml-safepass"
+  Path:			src
+  Modules:		Bcrypt
+  CSources:		crypt_blowfish.c, crypt_blowfish.h, bcrypt_stub.c
+
+Document "ocaml-safepass-api"
+  Title:		API reference for Ocaml-safepass
+  Type:			ocamlbuild (0.3)
+  Install:		true
+  InstallDir:		$htmldir/api
+  BuildTools:		ocamldoc
+  XOCamlbuildPath:	./
+  XOCamlbuildLibraries:	ocaml-safepass
+
