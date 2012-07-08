@@ -9,6 +9,8 @@
 (**	{1 Exceptions}								*)
 (********************************************************************************)
 
+exception Invalid_count of int
+exception Invalid_seed of string
 exception Urandom_error of exn
 exception Gensalt_error
 exception Bcrypt_error
@@ -18,7 +20,6 @@ exception Bcrypt_error
 (**	{1 Type definitions}							*)
 (********************************************************************************)
 
-type salt_t = string
 type hash_t = string
 
 
@@ -39,24 +40,26 @@ let () =
 (**	{1 Public functions and values}						*)
 (********************************************************************************)
 
-let gensalt ?(count = 7) ?seed () =
-	let make_seed () =
-		try
-			let rng = open_in_bin "/dev/urandom" in
-			let len = 16 in
-			let buf = String.create len in
-			let _ = really_input rng buf 0 len in
-			close_in rng;
-			buf
-		with
-			exc -> raise (Urandom_error exc) in
-	let seed = match seed with
-		| Some s -> s
-		| None	 -> make_seed ()
-	in bcrypt_gensalt seed count
-
-let hash passwd salt =
-	bcrypt passwd salt
+let hash ?(count = 6) ?seed passwd =
+	if count < 4 || count > 31
+	then raise (Invalid_count count)
+	else begin
+		let seed = match seed with
+			| Some s when String.length s >= 16 -> s
+			| Some s -> raise (Invalid_seed s)
+			| None ->
+				try
+					let rng = open_in_bin "/dev/urandom" in
+					let len = 16 in
+					let buf = String.create len in
+					let _ = really_input rng buf 0 len in
+					close_in rng;
+					buf
+				with
+					exc -> raise (Urandom_error exc) in
+		let salt = bcrypt_gensalt seed count in
+		bcrypt passwd salt
+	end
 
 let verify passwd hash =
 	bcrypt passwd hash = hash

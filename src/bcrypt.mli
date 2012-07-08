@@ -12,6 +12,16 @@
 (**	{1 Exceptions}								*)
 (********************************************************************************)
 
+(**	The provided [count] is invalid.  The [count] must be an integer between
+	4 and 31, inclusive.
+*)
+exception Invalid_count of int
+
+(**	The given string [seed] cannot be used as seed.  Please provide a string
+	at least 16 bytes long.
+*)
+exception Invalid_seed of string
+
 (**	An exception occurred obtaining random seed from [/dev/urandom].
 *)
 exception Urandom_error of exn
@@ -29,11 +39,6 @@ exception Bcrypt_error
 (**	{1 Type definitions}							*)
 (********************************************************************************)
 
-(**	Abstract type holding the salt for a password.  Use function {!gensalt}
-	to generate a new salt.
-*)
-type salt_t
-
 (**	Abstract type holding a password in salted and hashed form. Use function
 	{!hash} to generate a hash.
 *)
@@ -44,19 +49,17 @@ type hash_t
 (**	{1 Public functions and values}						*)
 (********************************************************************************)
 
-(**	Create a new salt using [count] as the log{_2} of the number of Blowfish
-	iterations to use (the default is 7, and currently any value between 4
-	and 31 is accepted).  If provided, the [seed] parameter must be a string
-	of at least 16 bytes; if not provided, then 16 random bytes will be used,
-	obtained from [/dev/urandom].
+(**	[hash ?count ?seed password] hashes the given password string.  The password
+	is automatically salted before hashing.  If [seed] is not given, the salting
+	procedure automatically fetches a seed from [/dev/urandom].  If given, [seed]
+	must be a string at least 16 bytes long.  The [count] parameter is the log{_2}
+	number of Blowfish iterations to use in the hashing procedure.  Its default
+	value is 6, and any integer between 4 and 31 (inclusive) may be used.
 *)
-val gensalt: ?count:int -> ?seed:string -> unit -> salt_t
+val hash: ?count:int -> ?seed:string -> string -> hash_t
 
-(**	Hash the given password with the given salt.
-*)
-val hash: string -> salt_t -> hash_t
-
-(**	Verifies if the given password matches the previously hashed password.
+(**	[verify password hash] verifies if the given password matches the previously
+	hashed password.
 *)
 val verify: string -> hash_t -> bool
 
