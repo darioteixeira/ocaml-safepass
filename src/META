@@ -1,7 +1,7 @@
 # OASIS_START
-# DO NOT EDIT (digest: 2e90617f155df5c6c8062c4e29297b05)
-version = "0.9"
-description = "OCaml bindings to Openwall's Bcrypt."
+# DO NOT EDIT (digest: 21c9c49f41883956521e704466bc59af)
+version = "1.0"
+description = "Facilities for the safe storage of user passwords"
 archive(byte) = "ocaml-safepass.cma"
 archive(byte, plugin) = "ocaml-safepass.cma"
 archive(native) = "ocaml-safepass.cmxa"

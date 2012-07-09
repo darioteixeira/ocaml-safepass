@@ -49,17 +49,18 @@ type hash_t
 (**	{1 Public functions and values}						*)
 (********************************************************************************)
 
-(**	[hash ?count ?seed password] hashes the given password string.  The password
-	is automatically salted before hashing.  If [seed] is not given, the salting
-	procedure automatically fetches a seed from [/dev/urandom].  If given, [seed]
-	must be a string at least 16 bytes long.  The [count] parameter is the log{_2}
-	number of Blowfish iterations to use in the hashing procedure.  Its default
-	value is 6, and any integer between 4 and 31 (inclusive) may be used.
+(**	Call [hash ?count ?seed password] to hash the given password string.  The
+	password is automatically salted before hashing.  If [seed] is not given,
+	the salting procedure automatically fetches a seed from [/dev/urandom].
+	If given, [seed] must be a string at least 16 bytes long.  The [count]
+	parameter is the log{_2} number of Blowfish iterations to use in the
+	hashing procedure.  Its default value is 6, and any integer between 4
+	and 31 (inclusive) may be used.
 *)
 val hash: ?count:int -> ?seed:string -> string -> hash_t
 
-(**	[verify password hash] verifies if the given password matches the previously
-	hashed password.
+(**	Call [verify password hash] to verify if the given password matches the
+	previously hashed password.
 *)
 val verify: string -> hash_t -> bool
 

@@ -1,7 +1,7 @@
 OASISFormat: 0.3
 Name:        OCaml-safepass
-Version:     0.9
-Synopsis:    OCaml bindings to Openwall's Bcrypt.
+Version:     1.0
+Synopsis:    Facilities for the safe storage of user passwords
 Authors:     Dario Teixeira
 License:     LGPL-2.0 with OCaml linking exception
 BuildTools:  ocamlbuild, ocamldoc
