@@ -54,7 +54,7 @@
 #include "crypt_blowfish.h"
 
 #ifdef __i386__
-#define BF_ASM				1
+#define BF_ASM				0	/* Was 1, which caused runtime problems due to absence of _BF_body_r */
 #define BF_SCALE			1
 #elif defined(__x86_64__) || defined(__alpha__) || defined(__hppa__)
 #define BF_ASM				0
