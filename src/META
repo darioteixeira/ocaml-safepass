@@ -1,11 +1,11 @@
 # OASIS_START
-# DO NOT EDIT (digest: 88ee454ec64fa81b9927cff3f73366b3)
+# DO NOT EDIT (digest: 7a88775091331491af2f4e116930fa85)
 version = "1.0.1"
 description = "Facilities for the safe storage of user passwords"
-archive(byte) = "ocaml-safepass.cma"
-archive(byte, plugin) = "ocaml-safepass.cma"
-archive(native) = "ocaml-safepass.cmxa"
-archive(native, plugin) = "ocaml-safepass.cmxs"
-exists_if = "ocaml-safepass.cma"
+archive(byte) = "safepass.cma"
+archive(byte, plugin) = "safepass.cma"
+archive(native) = "safepass.cmxa"
+archive(native, plugin) = "safepass.cmxs"
+exists_if = "safepass.cma"
 # OASIS_STOP
 
