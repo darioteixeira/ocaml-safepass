@@ -16,8 +16,8 @@ Document "safepass-api"
   Title:		API reference for safepass
   Type:			ocamlbuild (0.3)
   Install:		true
-  InstallDir:		$htmldir/api
+  InstallDir:		$htmldir
   BuildTools:		ocamldoc
-  XOCamlbuildPath:	./
+  XOCamlbuildPath:	src
   XOCamlbuildLibraries:	safepass
 
