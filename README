@@ -45,7 +45,7 @@ API documentation, use 'make doc'.
 4. License
 ==========
 
-OCaml-safepass is distributed under the terms of the GNU LGPL version 2 with
+OCaml-safepass is distributed under the terms of the GNU LGPL version 2.1 with
 the usual OCaml linking exception.  See LICENSE file for full license text.
 
 

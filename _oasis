@@ -3,7 +3,7 @@ Name:        OCaml-safepass
 Version:     1.2
 Synopsis:    Facilities for the safe storage of user passwords
 Authors:     Dario Teixeira
-License:     LGPL-2.0 with OCaml linking exception
+License:     LGPL-2.1 with OCaml linking exception
 BuildTools:  ocamlbuild, ocamldoc
 Plugins:     META (0.3), DevFiles (0.3)
 
