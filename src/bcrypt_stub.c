@@ -5,6 +5,7 @@
 /********************************************************************************/
 
 #include <stdlib.h>
+#include <stdio.h>
 #include <caml/mlvalues.h>
 #include <caml/memory.h>
 #include <caml/alloc.h>
@@ -50,7 +51,9 @@ CAMLprim value bcrypt_stub (value v_key, value v_salt)
 	char *key = String_val (v_key);
 	char *salt = String_val (v_salt);
 
+  printf("bcrypt start\n");
 	char *result = _crypt_blowfish_rn (key, salt, output, sizeof (output));
+  printf("bcrypt end\n");
 
 	if (result == NULL)
 		{
