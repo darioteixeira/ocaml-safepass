@@ -1,6 +1,6 @@
-OASISFormat: 0.3
+OASISFormat: 0.4
 Name:        OCaml-safepass
-Version:     1.2
+Version:     1.3
 Synopsis:    Facilities for the safe storage of user passwords
 Authors:     Dario Teixeira
 License:     LGPL-2.1 with OCaml linking exception
@@ -11,6 +11,7 @@ Library "safepass"
   Path:			src
   Modules:		Bcrypt
   CSources:		crypt_blowfish.c, crypt_blowfish.h, bcrypt_stub.c
+  CCOpt:		-W -Wall -Wbad-function-cast -Wcast-align -Wcast-qual -Wmissing-prototypes -Wstrict-prototypes -Wshadow -Wundef -Wpointer-arith -O2 -fomit-frame-pointer -funroll-loops
 
 Document "safepass-api"
   Title:		API reference for safepass

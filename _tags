@@ -1,5 +1,5 @@
 # OASIS_START
-# DO NOT EDIT (digest: 62530591d5d8548a4b6309ef5c3e2555)
+# DO NOT EDIT (digest: c808bfbcec7faadef1e0bd27b62930e3)
 # Ignore VCS directories, you can use the same kind of rule outside
 # OASIS_START/STOP if you want to exclude directories that contains
 # useless stuff for the build process
@@ -15,5 +15,8 @@
 "_darcs": not_hygienic
 # Library safepass
 "src/safepass.cmxs": use_safepass
+<src/*.ml{,i}>: oasis_library_safepass_ccopt
+"src/crypt_blowfish.c": oasis_library_safepass_ccopt
+"src/bcrypt_stub.c": oasis_library_safepass_ccopt
 <src/safepass.{cma,cmxa}>: use_libsafepass_stubs
 # OASIS_STOP
