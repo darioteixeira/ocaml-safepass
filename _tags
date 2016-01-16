@@ -20,3 +20,4 @@
 "src/bcrypt_stub.c": oasis_library_safepass_ccopt
 <src/safepass.{cma,cmxa}>: use_libsafepass_stubs
 # OASIS_STOP
+"xen-libc": -traverse
