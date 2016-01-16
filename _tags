@@ -1,8 +1,9 @@
 # OASIS_START
-# DO NOT EDIT (digest: c808bfbcec7faadef1e0bd27b62930e3)
+# DO NOT EDIT (digest: 3acaff2ad22b5f1591682d88eb44e5f2)
 # Ignore VCS directories, you can use the same kind of rule outside
 # OASIS_START/STOP if you want to exclude directories that contains
 # useless stuff for the build process
+true: annot, bin_annot
 <**/.svn>: -traverse
 <**/.svn>: not_hygienic
 ".bzr": -traverse
@@ -15,9 +16,14 @@
 "_darcs": not_hygienic
 # Library safepass
 "src/safepass.cmxs": use_safepass
-<src/*.ml{,i}>: oasis_library_safepass_ccopt
+<src/*.ml{,i,y}>: oasis_library_safepass_ccopt
 "src/crypt_blowfish.c": oasis_library_safepass_ccopt
 "src/bcrypt_stub.c": oasis_library_safepass_ccopt
+<src/safepass.{cma,cmxa}>: oasis_library_safepass_cclib
+"src/libsafepass_stubs.lib": oasis_library_safepass_cclib
+"src/dllsafepass_stubs.dll": oasis_library_safepass_cclib
+"src/libsafepass_stubs.a": oasis_library_safepass_cclib
+"src/dllsafepass_stubs.so": oasis_library_safepass_cclib
 <src/safepass.{cma,cmxa}>: use_libsafepass_stubs
 # OASIS_STOP
 "xen-libc": -traverse
