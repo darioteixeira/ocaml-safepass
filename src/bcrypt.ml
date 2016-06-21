@@ -64,7 +64,7 @@ let hash ?(count = 6) ?seed passwd =
 let verify passwd hash =
     bcrypt passwd hash = hash
 
-external hash_of_string: string -> hash = "%identity"
+let hash_of_string x = x
 
-external string_of_hash: hash -> string = "%identity"
+let string_of_hash x = x
 

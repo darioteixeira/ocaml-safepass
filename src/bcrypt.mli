@@ -66,9 +66,9 @@ val verify: string -> hash -> bool
 
 (** Convert [string] to {!hash}
 *)
-external hash_of_string: string -> hash = "%identity"
+val hash_of_string: string -> hash
 
 (** Convert {!hash} to [string]
 *)
-external string_of_hash: hash -> string = "%identity"
+val string_of_hash: hash -> string
 
