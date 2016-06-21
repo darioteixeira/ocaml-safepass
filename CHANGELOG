@@ -1,4 +1,12 @@
 --------------------------
+(2016-06-21) version 2.0:
+
+  * Patch by Tim Cuthbertson adding support for compiling with Mirage-xen.
+  * Do not use -Wmissing-prototypes.
+  * Type renaming: hash_t -> hash (implies new major version number).
+  * Do not use external for identity functions.
+
+--------------------------
 (2014-07-25) version 1.3:
 
   * Patches by Jonathan Curran:
@@ -7,24 +15,20 @@
       This brings a healthy speed-up to the library.
     - Update src/crypt_blowfish.c to version 1.3 from http://www.openwall.com/crypt
 
-
 --------------------------
 (2012-10-08) version 1.2:
 
   * Add OASIS generated files that were missing from previous release.
-
 
 --------------------------
 (2012-10-07) version 1.1:
 
   * Library's findlib name changed to just 'safepass'.
 
-
 --------------------------
 (2012-08-02) version 1.0.1:
 
   * Fix problem on i386 systems without _BF_body_r in libc.
-
 
 -------------------------
 (2012-07-09) version 1.0:
