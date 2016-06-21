@@ -1,6 +1,6 @@
 OASISFormat: 0.4
 Name:        OCaml-safepass
-Version:     1.3
+Version:     2.0
 Synopsis:    Facilities for the safe storage of user passwords
 Authors:     Dario Teixeira
 License:     LGPL-2.1 with OCaml linking exception

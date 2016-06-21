@@ -1,6 +1,6 @@
 # OASIS_START
-# DO NOT EDIT (digest: 1d267deed9ef7a7a1485a024f896e452)
-version = "1.3"
+# DO NOT EDIT (digest: 42f84f39206ed79906f7035b418c8a4b)
+version = "2.0"
 description = "Facilities for the safe storage of user passwords"
 archive(byte) = "safepass.cma"
 archive(byte, plugin) = "safepass.cma"
