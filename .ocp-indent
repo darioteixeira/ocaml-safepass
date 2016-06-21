@@ -1,0 +1,13 @@
+normal
+base=4
+type=4
+in=0
+with=4
+match_clause=4
+ppx_stritem_ext=4
+max_indent=4
+strict_with=never
+strict_else=always
+strict_comments=false
+align_ops=true
+align_params=never
