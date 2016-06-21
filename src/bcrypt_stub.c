@@ -1,6 +1,6 @@
 /********************************************************************************/
 /*  Bcrypt_stub.c
-    Copyright (c) 2012 Dario Teixeira (dario.teixeira@yahoo.com)
+    Copyright (c) 2012-2016 Dario Teixeira <dario.teixeira@nleyten.com>
 */
 /********************************************************************************/
 
