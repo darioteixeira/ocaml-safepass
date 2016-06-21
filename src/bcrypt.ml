@@ -51,10 +51,10 @@ let hash ?(count = 6) ?seed passwd =
                 try
                     let rng = open_in_bin "/dev/urandom" in
                     let len = 16 in
-                    let buf = String.create len in
-                    let _ = really_input rng buf 0 len in
+                    let buf = Bytes.create len in
+                    let () = really_input rng buf 0 len in
                     close_in rng;
-                    buf
+                    Bytes.unsafe_to_string buf
                 with
                     exc -> raise (Urandom_error exc) in
         let salt = bcrypt_gensalt seed count in
