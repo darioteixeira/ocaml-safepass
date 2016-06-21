@@ -20,7 +20,7 @@ exception Bcrypt_error
 (** {1 Type definitions}                                                        *)
 (********************************************************************************)
 
-type hash_t = string
+type hash = string
 
 
 (********************************************************************************)
@@ -64,7 +64,7 @@ let hash ?(count = 6) ?seed passwd =
 let verify passwd hash =
     bcrypt passwd hash = hash
 
-external hash_of_string: string -> hash_t = "%identity"
+external hash_of_string: string -> hash = "%identity"
 
-external string_of_hash: hash_t -> string = "%identity"
+external string_of_hash: hash -> string = "%identity"
 

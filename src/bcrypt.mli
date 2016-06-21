@@ -42,7 +42,7 @@ exception Bcrypt_error
 (** Abstract type holding a password in salted and hashed form. Use function
     {!hash} to generate a hash.
 *)
-type hash_t
+type hash
 
 
 (********************************************************************************)
@@ -57,18 +57,18 @@ type hash_t
     hashing procedure.  Its default value is 6, and any integer between 4
     and 31 (inclusive) may be used.
 *)
-val hash: ?count:int -> ?seed:string -> string -> hash_t
+val hash: ?count:int -> ?seed:string -> string -> hash
 
 (** Call [verify password hash] to verify if the given password matches the
     previously hashed password.
 *)
-val verify: string -> hash_t -> bool
+val verify: string -> hash -> bool
 
-(** Convert [string] to {!hash_t}
+(** Convert [string] to {!hash}
 *)
-external hash_of_string: string -> hash_t = "%identity"
+external hash_of_string: string -> hash = "%identity"
 
-(** Convert {!hash_t} to [string]
+(** Convert {!hash} to [string]
 *)
-external string_of_hash: hash_t -> string = "%identity"
+external string_of_hash: hash -> string = "%identity"
 
