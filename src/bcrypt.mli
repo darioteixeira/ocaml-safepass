@@ -44,6 +44,11 @@ exception Bcrypt_error
 *)
 type hash
 
+type variant =
+  | A
+  | Y
+  | B
+
 
 (********************************************************************************)
 (** {1 Public functions and values}                                             *)
@@ -57,7 +62,7 @@ type hash
     hashing procedure.  Its default value is 6, and any integer between 4
     and 31 (inclusive) may be used.
 *)
-val hash: ?count:int -> ?seed:string -> string -> hash
+val hash: ?count:int -> ?variant:variant -> ?seed:string -> string -> hash
 
 (** Call [verify password hash] to verify if the given password matches the
     previously hashed password.
