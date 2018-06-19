@@ -38,8 +38,8 @@ C modules from Openwall's Crypt_blowfish.
 ==========================
 
 OCaml-safepass uses OASIS.  Building and installing follows the costumary
-'configure', 'make', and 'make install' sequence.  To generate the ocamldoc
-API documentation, use 'make doc'.
+'make' call sequence.  To generate the ocamldoc API documentation, use
+'make doc'.
 
 
 4. License
