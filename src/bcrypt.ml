@@ -35,6 +35,22 @@ let () =
     Callback.register_exception "gensalt_error" Gensalt_error;
     Callback.register_exception "bcrypt_error" Bcrypt_error
 
+let read_seed () =
+    let rec really_read ?(already_read=0) fd to_read buff =
+        let read_this_time = Unix.read fd buff already_read (to_read - already_read) in
+        let already_read = already_read + read_this_time in
+        match already_read >= to_read with
+        | true -> ()
+        | false -> really_read ~already_read fd to_read buff
+    in
+
+    let fd = Unix.openfile "/dev/urandom" [Unix.O_RDONLY] 0o400 in
+    let len = 16 in
+    let buff = Bytes.create len in
+    really_read fd len buff;
+    Unix.close fd;
+    Bytes.unsafe_to_string buff
+
 
 (********************************************************************************)
 (** {1 Public functions and values}                                             *)
@@ -49,14 +65,10 @@ let hash ?(count = 6) ?seed passwd =
             | Some s -> raise (Invalid_seed s)
             | None ->
                 try
-                    let rng = open_in_bin "/dev/urandom" in
-                    let len = 16 in
-                    let buf = Bytes.create len in
-                    let () = really_input rng buf 0 len in
-                    close_in rng;
-                    Bytes.unsafe_to_string buf
+                    read_seed ()
                 with
-                    exc -> raise (Urandom_error exc) in
+                    exc -> raise (Urandom_error exc)
+        in
         let salt = bcrypt_gensalt seed count in
         bcrypt passwd salt
     end
