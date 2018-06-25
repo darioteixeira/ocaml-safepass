@@ -73,7 +73,7 @@ let hash ?(count = 6) ?(variant=Y) ?seed passwd =
             | Some s -> raise (Invalid_seed s)
             | None -> try read_seed () with exc -> raise (Urandom_error exc)
         in
-        let salt = bcrypt_gensalt seed count in
+        let salt = bcrypt_gensalt (char_of_variant variant) seed count in
         bcrypt passwd salt
     end
 
