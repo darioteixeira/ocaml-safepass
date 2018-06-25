@@ -17,11 +17,11 @@
 /* Stub definitions.                                                            */
 /********************************************************************************/
 
-CAMLprim value bcrypt_gensalt_stub (value v_input, value v_count)
+CAMLprim value bcrypt_gensalt_stub (value v_variant, value v_input, value v_count)
     {
-    CAMLparam2 (v_input, v_count);
+    CAMLparam3 (v_variant, v_input, v_count);
     CAMLlocal1 (v_output);
-    char prefix [3] = {'$', '2', 'y'};
+    char prefix [3] = {'$', '2', Int_val(v_variant)};
     char output [30];
 
     char *input = String_val (v_input);
