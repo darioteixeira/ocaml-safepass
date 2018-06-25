@@ -44,11 +44,8 @@ OCaml-safepass is distributed under the terms of the GNU LGPL version 2.1 with
 the usual OCaml linking exception.  See LICENSE file for full license text.
 
 
-References
-==========
-
 [dario]: mailto:dario.teixeira@nleyten.com
 [ocaml-safepass]: http://ocaml-safepass.forge.ocamlcore.org/
-[Bcrypt]: http://en.wikipedia.org/wiki/Bcrypt
-[RT]: http://en.wikipedia.org/wiki/Rainbow_table
+[Bcrypt]: https://en.wikipedia.org/wiki/Bcrypt
+[RT]: https://en.wikipedia.org/wiki/Rainbow_table
 [crypt]: http://www.openwall.com/crypt/
