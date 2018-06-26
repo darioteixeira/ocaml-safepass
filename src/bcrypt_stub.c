@@ -21,7 +21,7 @@ CAMLprim value bcrypt_gensalt_stub (value v_variant, value v_input, value v_coun
     {
     CAMLparam3 (v_variant, v_input, v_count);
     CAMLlocal1 (v_output);
-    char prefix [3] = {'$', '2', Int_val(v_variant)};
+    char prefix [3] = {'$', '2', Int_val (v_variant)};
     char output [30];
 
     char *input = String_val (v_input);

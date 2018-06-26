@@ -22,10 +22,7 @@ exception Bcrypt_error
 
 type hash = string
 
-type variant =
-  | A
-  | Y
-  | B
+type variant = A | Y | B
 
 
 (********************************************************************************)
@@ -45,7 +42,7 @@ let char_of_variant = function
     | B -> 'b'
 
 let read_seed () =
-    let rec really_read ?(already_read=0) fd to_read buff =
+    let rec really_read ?(already_read = 0) fd to_read buff =
         let read_this_time = Unix.read fd buff already_read (to_read - already_read) in
         let already_read = already_read + read_this_time in
         match already_read >= to_read with
@@ -64,7 +61,7 @@ let read_seed () =
 (** {1 Public functions and values}                                             *)
 (********************************************************************************)
 
-let hash ?(count = 6) ?(variant=Y) ?seed passwd =
+let hash ?(count = 6) ?(variant = Y) ?seed passwd =
     if count < 4 || count > 31
     then raise (Invalid_count count)
     else begin

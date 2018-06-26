@@ -44,23 +44,23 @@ exception Bcrypt_error
 *)
 type hash
 
-type variant =
-  | A
-  | Y
-  | B
+(** Supported variants of the Bcrypt algorithm.
+*)
+type variant = A | Y | B
 
 
 (********************************************************************************)
 (** {1 Public functions and values}                                             *)
 (********************************************************************************)
 
-(** Call [hash ?count ?seed password] to hash the given password string.  The
-    password is automatically salted before hashing.  If [seed] is not given,
+(** Call [hash ?count ?variant ?seed password] to hash the given password string.
+    The password is automatically salted before hashing.  If [seed] is not given,
     the salting procedure automatically fetches a seed from [/dev/urandom].
     If given, [seed] must be a string at least 16 bytes long.  The [count]
     parameter is the log{_2} number of Blowfish iterations to use in the
     hashing procedure.  Its default value is 6, and any integer between 4
-    and 31 (inclusive) may be used.
+    and 31 (inclusive) may be used.  Finally, [variant] picks which of the
+    Bcrypt variants to use (defaults to [Y]).
 *)
 val hash: ?count:int -> ?variant:variant -> ?seed:string -> string -> hash
 
