@@ -1,7 +1,9 @@
 (library
-  ((name safepass)
-   (public_name safepass)
-   (synopsis "Facilities for the safe storage of user passwords")
-   (c_names (bcrypt_stub crypt_blowfish))
-   (c_flags (:standard -W -Wall -Wbad-function-cast -Wcast-align -Wcast-qual -Wstrict-prototypes -Wshadow -Wundef -Wpointer-arith -O2 -fomit-frame-pointer -funroll-loops))
-   (wrapped false)))
+    (
+    (name safepass)
+    (public_name safepass)
+    (synopsis "Facilities for the safe storage of user passwords")
+    (c_names (bcrypt_stub crypt_blowfish))
+    (c_flags (:standard -W -Wall -Wbad-function-cast -Wcast-align -Wcast-qual -Wstrict-prototypes -Wshadow -Wundef -Wpointer-arith -O2 -fomit-frame-pointer -funroll-loops))
+    (wrapped false)
+    ))
