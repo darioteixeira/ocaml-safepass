@@ -1,9 +1,10 @@
-dev
----
+v3.0 2018-06-28
+---------------
 
   * Patches by Marek Kubica:
     - Port to `Dune` and remove all generated files.
-    - Allow picking different variants of Bcrypt hashes.
+    - Allow picking different variants of Bcrypt hashes
+      (implies new major version number).
     - Use unbuffered IO to read only required number of bytes from `/dev/urandom`.
 
 v2.0 2016-06-21
