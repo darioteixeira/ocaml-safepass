@@ -8,7 +8,7 @@ dev-repo: "https://github.com/darioteixeira/ocaml-safepass.git"
 license: "LGPL-2.1 with OCaml linking exception"
 version: "3.0"
 available: [ocaml-version >= "4.02.0"]
-build: ["jbuilder" "build" "-p" name "-j" jobs]
+build: ["dune" "build" "-p" name "-j" jobs]
 depends: [
-  "jbuilder" {build}
+  "dune" {build & >= "2.0.0"}
 ]
