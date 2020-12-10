@@ -1,0 +1,22 @@
+(library
+ (foreign_stubs
+  (language c)
+  (names bcrypt_stub crypt_blowfish)
+  (flags
+   :standard
+   -W
+   -Wall
+   -Wbad-function-cast
+   -Wcast-align
+   -Wcast-qual
+   -Wstrict-prototypes
+   -Wshadow
+   -Wundef
+   -Wpointer-arith
+   -O2
+   -fomit-frame-pointer
+   -funroll-loops))
+ (name safepass)
+ (public_name safepass)
+ (synopsis "Facilities for the safe storage of user passwords")
+ (wrapped false))
