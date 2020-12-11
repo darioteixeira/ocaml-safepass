@@ -3,10 +3,10 @@
 all: build
 
 build:
-	jbuilder build
+	dune build
 
 doc:
-	jbuilder build @doc
+	dune build @doc
 
 clean:
-	jbuilder clean
+	dune clean

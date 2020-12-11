@@ -24,7 +24,7 @@ CAMLprim value bcrypt_gensalt_stub (value v_variant, value v_input, value v_coun
     char prefix [3] = {'$', '2', Int_val (v_variant)};
     char output [30];
 
-    char *input = String_val (v_input);
+    const char *input = String_val (v_input);
     unsigned long count = Unsigned_long_val (v_count);
 
     char *result = _crypt_gensalt_blowfish_rn (prefix, count, input, caml_string_length (v_input), output, sizeof (output));
@@ -47,8 +47,8 @@ CAMLprim value bcrypt_stub (value v_key, value v_salt)
     CAMLlocal1 (v_output);
     char output [61] = {0}; // Must be initialised to 0.
 
-    char *key = String_val (v_key);
-    char *salt = String_val (v_salt);
+    const char *key = String_val (v_key);
+    const char *salt = String_val (v_salt);
 
     char *result = _crypt_blowfish_rn (key, salt, output, sizeof (output));
 

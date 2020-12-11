@@ -1,14 +1,14 @@
-opam-version: "1.2"
-name: "safepass"
+opam-version: "2.0"
+version: "3.0"
+synopsis: "Facilities for the safe storage of user passwords"
 maintainer: "Dario Teixeira <dario.teixeira@nleyten.com>"
 authors: ["Dario Teixeira <dario.teixeira@nleyten.com>"]
 homepage: "https://github.com/darioteixeira/ocaml-safepass"
 bug-reports: "https://github.com/darioteixeira/ocaml-safepass/issues"
-dev-repo: "https://github.com/darioteixeira/ocaml-safepass.git"
-license: "LGPL-2.1 with OCaml linking exception"
-version: "3.0"
-available: [ocaml-version >= "4.02.0"]
-build: ["jbuilder" "build" "-p" name "-j" jobs]
+dev-repo: "git+https://github.com/darioteixeira/ocaml-safepass.git"
+license: "LGPL-2.1-only with OCaml-LGPL-linking-exception"
+build: ["dune" "build" "-p" name "-j" jobs]
 depends: [
-  "jbuilder" {build}
+  "ocaml" {>= "4.02"}
+  "dune" {>= "2.0"}
 ]
