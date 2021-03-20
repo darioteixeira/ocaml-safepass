@@ -1,3 +1,9 @@
+v3.1 2021-03-20
+---------------
+
+  * Patches by Kate Deplaix:
+    - Switch from Jbuilder to Dune and Opam 2.0.
+
 v3.0 2018-06-28
 ---------------
 
