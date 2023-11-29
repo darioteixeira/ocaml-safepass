@@ -1,8 +1,8 @@
 opam-version: "2.0"
 version: "3.1"
 synopsis: "Facilities for the safe storage of user passwords"
-maintainer: "Dario Teixeira <dario.teixeira@nleyten.com>"
-authors: ["Dario Teixeira <dario.teixeira@nleyten.com>"]
+maintainer: "Dario Teixeira <dario.teixeira@yahoo.com>"
+authors: ["Dario Teixeira <dario.teixeira@yahoo.com>"]
 homepage: "https://github.com/darioteixeira/ocaml-safepass"
 bug-reports: "https://github.com/darioteixeira/ocaml-safepass/issues"
 dev-repo: "git+https://github.com/darioteixeira/ocaml-safepass.git"

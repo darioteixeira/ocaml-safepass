@@ -1,9 +1,3 @@
-(********************************************************************************)
-(*  Bcrypt.mli
-    Copyright (c) 2012-2016 Dario Teixeira <dario.teixeira@nleyten.com>
-*)
-(********************************************************************************)
-
 (** Module for safe salting and hashing of passwords using the Bcrypt algorithm.
 *)
 

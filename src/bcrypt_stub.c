@@ -1,9 +1,3 @@
-/********************************************************************************/
-/*  Bcrypt_stub.c
-    Copyright (c) 2012-2016 Dario Teixeira <dario.teixeira@nleyten.com>
-*/
-/********************************************************************************/
-
 #include <stdlib.h>
 #include <caml/mlvalues.h>
 #include <caml/memory.h>
